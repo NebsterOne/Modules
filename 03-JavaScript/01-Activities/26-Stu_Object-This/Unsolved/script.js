@@ -1,7 +1,9 @@
 // TODO: What does 'this' refer to?
+//Refers to global window 
 console.log(this);
 
 // TODO: What does 'this' refer to?
+//Reffers to this function
 function helloThis() { 
    console.log("Inside this function, this is " + this); 
    }
