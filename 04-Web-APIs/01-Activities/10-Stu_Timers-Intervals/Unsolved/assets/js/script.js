@@ -9,11 +9,33 @@ function countdown() {
   var timeLeft = 5;
 
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+  var timeInterval = setInterval(function() {
+
+
+
+    // timeEl.textContent = timeLeft + ' seconds left;'
+    // if(timeLeft === 0) {
+    //   clearInterval(timeInterval);
+    //   timeEl.textContent = ' ';
+    //   displayMessage();
+    // }
+    // timeLeft --;
+    
+    if(timeLeft > 1) {
+      timerEl.textContent = timeLeft + ' seconds left';
+      timeLeft --;
+    } else if (timeLeft ===1) {
+      timerEl.textContent = timeLeft + ' second left';
+      timeLeft --;  
+    } else {
+      clearInterval(timeInterval);
+      timerEl.textContent = ' '; 
+      displayMessage();
+    }
+
+    
+    
+  }, 1000);
 }
 
 // Displays the message one word at a time
