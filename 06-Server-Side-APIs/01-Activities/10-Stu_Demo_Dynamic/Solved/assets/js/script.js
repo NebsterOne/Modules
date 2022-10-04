@@ -1,4 +1,4 @@
-var userContainer = document.getElementById('users');
+var usersContainer = document.getElementById('users');
 var fetchButton = document.getElementById('fetch-button');
 
 function getApi() {
@@ -9,18 +9,21 @@ function getApi() {
       return response.json();
     })
     .then(function (data) {
-      // Use the console to examine the response
+      //Using console.log to examine the data
       console.log(data);
-      // TODO: Loop through the data and generate your HTML
       for (var i = 0; i < data.length; i++) {
+        //Creating a h3 element and a p element
         var userName = document.createElement('h3');
         var userUrl = document.createElement('p');
 
+        //Setting the text of the h3 element and p element.
         userName.textContent = data[i].login;
         userUrl.textContent = data[i].url;
 
-        userContainer.append(userName);
-        userContainer.append(userUrl);
+        //Appending the dynamically generated html to the div associated with the id="users"
+        //Append will attach the element as the bottom most child.
+        usersContainer.append(userName);
+        usersContainer.append(userUrl);
       }
     });
 }
