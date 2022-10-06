@@ -1,9 +1,6 @@
-fetch('https://api.github.com/repos/nodejs/node/issues?per_page=5', {
+requestUrl = 'https://api.github.com/orgs/nodejs/repos';
 
-
-  cache: 'reload',
-})
-
+fetch(requestUrl)
   .then(function (response) {
     return response.json();
   })
